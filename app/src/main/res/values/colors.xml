@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta "basquete de rua": laranja de bola + azul + branco sobre asfalto escuro -->
+    <color name="laranja_bola">#FFFF7A1A</color>
+    <color name="laranja_escuro">#FFC2540A</color>
+    <color name="laranja_suave">#33FF7A1A</color>
+    <color name="azul_quadra">#FF3D8BFF</color>
+    <color name="azul_escuro">#FF1F4FA8</color>
+    <color name="azul_suave">#333D8BFF</color>
+    <color name="branco">#FFFFFFFF</color>
+    <color name="preto">#FF000000</color>
+
+    <color name="fundo_asfalto">#FF101214</color>
+    <color name="superficie">#FF1A1D21</color>
+    <color name="superficie_card">#FF23272D</color>
+    <color name="superficie_alta">#FF2D323A</color>
+    <color name="contorno">#FF3A4049</color>
+
+    <color name="texto_primario">#FFF5F5F5</color>
+    <color name="texto_secundario">#FFA9B0BA</color>
+    <color name="texto_apagado">#FF6E7682</color>
+
+    <color name="linha_quadra">#14FFFFFF</color>
+    <color name="transparente">#00000000</color>
+    <color name="sombra_foto">#E6101214</color>
+    <color name="vermelho_fogo">#FFFF4D4D</color>
+    <color name="amarelo_trofeu">#FFFFC93C</color>
+
+    <!-- Placar estilo ginásio -->
+    <color name="placar_fundo">#FF050607</color>
+    <color name="placar_borda">#FF2A2F36</color>
+    <color name="placar_digito_laranja">#FFFF8A2B</color>
+    <color name="placar_digito_azul">#FF5AA0FF</color>
+
+    <!-- Cores usadas pelas ilustrações das quadras -->
+    <color name="ceu_noite">#FF15203A</color>
+    <color name="teto_ginasio">#FF2A2D33</color>
+    <color name="poste">#FF8A929C</color>
+    <color name="luz_refletor">#FFFFE9A8</color>
+    <color name="piso_1">#FFB4582A</color>
+    <color name="piso_2">#FF2E5C9A</color>
+    <color name="piso_3">#FF3E7D4F</color>
+    <color name="piso_4">#FF7A3E8E</color>
+    <color name="piso_5">#FF9A7B2E</color>
+    <color name="piso_6">#FF8E2E3E</color>
+</resources>

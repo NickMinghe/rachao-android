@@ -1,0 +1,93 @@
+<resources>
+    <!-- Tema escuro Material Design 3 com laranja de bola como cor primária -->
+    <style name="Base.Theme.Rachao" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/laranja_bola</item>
+        <item name="colorOnPrimary">@color/preto</item>
+        <item name="colorPrimaryContainer">@color/laranja_escuro</item>
+        <item name="colorOnPrimaryContainer">@color/branco</item>
+        <item name="colorSecondary">@color/azul_quadra</item>
+        <item name="colorOnSecondary">@color/branco</item>
+        <item name="colorSecondaryContainer">@color/azul_escuro</item>
+        <item name="colorOnSecondaryContainer">@color/branco</item>
+        <item name="colorTertiary">@color/amarelo_trofeu</item>
+        <item name="colorError">@color/vermelho_fogo</item>
+        <item name="android:colorBackground">@color/fundo_asfalto</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="colorOnSurface">@color/texto_primario</item>
+        <item name="colorOnSurfaceVariant">@color/texto_secundario</item>
+        <item name="colorSurfaceVariant">@color/superficie_alta</item>
+        <item name="colorOutline">@color/contorno</item>
+        <!-- Fundo com linhas de quadra sutis -->
+        <item name="android:windowBackground">@drawable/bg_tela_quadra</item>
+        <item name="materialCardViewStyle">@style/Widget.Rachao.Card</item>
+        <item name="toolbarStyle">@style/Widget.Rachao.Toolbar</item>
+    </style>
+
+    <style name="Theme.Rachao" parent="Base.Theme.Rachao" />
+
+    <style name="Widget.Rachao.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/superficie_card</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/contorno</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.Rachao.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleTextColor">@color/texto_primario</item>
+        <item name="subtitleTextColor">@color/texto_secundario</item>
+        <item name="navigationIconTint">@color/texto_primario</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Rachao.ToolbarTitulo</item>
+    </style>
+
+    <style name="TextAppearance.Rachao.ToolbarTitulo" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Rachao.Secao" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">@color/laranja_bola</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Rachao.Placar" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:fontFamily">@font/placar_digital</item>
+        <item name="android:textSize">72sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowRadius">18</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+    </style>
+
+    <style name="Widget.Rachao.ChipFiltro" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_fundo</item>
+        <item name="chipStrokeColor">@color/chip_borda</item>
+        <item name="android:textColor">@color/chip_texto</item>
+        <item name="checkedIconTint">@color/preto</item>
+        <item name="chipCornerRadius">50dp</item>
+    </style>
+
+    <style name="Widget.Rachao.Selo" parent="">
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
+    <style name="Widget.Rachao.BotaoPonto" parent="Widget.Material3.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/placar_digital</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+    </style>
+</resources>

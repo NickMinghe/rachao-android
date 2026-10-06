@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- COMPONENTE REUTILIZÁVEL: linha de jogador (lista de confirmados e elencos do placar) -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="4dp"
+    android:paddingVertical="8dp">
+
+    <TextView
+        android:id="@+id/textAvatar"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_avatar"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="@color/branco"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="C" />
+
+    <TextView
+        android:id="@+id/textNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceTitleSmall"
+        android:textColor="@color/texto_primario"
+        app:layout_constraintBottom_toTopOf="@id/textApelido"
+        app:layout_constraintEnd_toStartOf="@id/textVoce"
+        app:layout_constraintStart_toEndOf="@id/textAvatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Carlos Henrique" />
+
+    <!-- Opcional: só aparece se o jogador tiver apelido (isVisible) -->
+    <TextView
+        android:id="@+id/textApelido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        android:textColor="@color/laranja_bola"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/textDetalhe"
+        app:layout_constraintEnd_toEndOf="@id/textNome"
+        app:layout_constraintStart_toStartOf="@id/textNome"
+        app:layout_constraintTop_toBottomOf="@id/textNome"
+        tools:text="“Carlão”" />
+
+    <TextView
+        android:id="@+id/textDetalhe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        android:textColor="@color/texto_secundario"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/textNome"
+        app:layout_constraintStart_toStartOf="@id/textNome"
+        app:layout_constraintTop_toBottomOf="@id/textApelido"
+        tools:text="Pivô · Nível 4" />
+
+    <TextView
+        android:id="@+id/textVoce"
+        style="@style/Widget.Rachao.Selo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_selo_voce"
+        android:text="@string/selo_voce"
+        android:textColor="@color/preto"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

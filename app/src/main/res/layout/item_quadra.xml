@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- COMPONENTE REUTILIZÁVEL: card de quadra usado pelo QuadraAdapter (RecyclerView + CardView) -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:rippleColor="@color/laranja_suave">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- FrameLayout: foto com selos sobrepostos -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <ImageView
+                android:id="@+id/imageFoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cd_foto_quadra"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ilustra_quadra_1" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_gradiente_foto" />
+
+            <TextView
+                android:id="@+id/textRolando"
+                style="@style/Widget.Rachao.Selo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|start"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_selo_rolando"
+                android:text="@string/selo_rolando" />
+
+            <TextView
+                android:id="@+id/textTipo"
+                style="@style/Widget.Rachao.Selo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_selo_tipo"
+                tools:text="@string/tipo_ar_livre" />
+
+            <TextView
+                android:id="@+id/textNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="10dp"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:textColor="@color/branco"
+                android:textStyle="bold"
+                tools:text="Quadra do Viaduto" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textBairro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="@color/texto_secundario"
+                app:drawableStartCompat="@drawable/ic_local"
+                app:drawableTint="@color/texto_secundario"
+                tools:text="Centro" />
+
+            <TextView
+                android:id="@+id/textHorario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="@color/texto_secundario"
+                app:drawableStartCompat="@drawable/ic_relogio"
+                app:drawableTint="@color/texto_secundario"
+                tools:text="Seg a Sex · 19h às 22h" />
+
+            <TextView
+                android:id="@+id/textJogadores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="@color/laranja_bola"
+                app:drawableStartCompat="@drawable/ic_grupo"
+                app:drawableTint="@color/laranja_bola"
+                tools:text="7/10 jogadores" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progressOcupacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:indicatorColor="@color/laranja_bola"
+                app:trackColor="@color/superficie_alta"
+                app:trackCornerRadius="4dp"
+                app:trackThickness="6dp"
+                tools:progress="70" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

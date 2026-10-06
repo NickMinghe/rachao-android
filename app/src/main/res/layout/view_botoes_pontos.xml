@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    COMPONENTE REUTILIZÁVEL: botões +1 / +2 / +3 / desfazer.
+    É inflado UMA VEZ PARA CADA TIME na PlacarActivity (ViewBotoesPontosBinding.inflate),
+    e a cor de cada cópia é aplicada em código a partir do Time.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botaoMais1"
+        style="@style/Widget.Rachao.BotaoPonto"
+        android:text="@string/ponto_1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botaoMais2"
+        style="@style/Widget.Rachao.BotaoPonto"
+        android:text="@string/ponto_2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botaoMais3"
+        style="@style/Widget.Rachao.BotaoPonto"
+        android:text="@string/ponto_3" />
+
+    <Space
+        android:layout_width="4dp"
+        android:layout_height="0dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botaoDesfazer"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:contentDescription="@string/cd_desfazer"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        app:cornerRadius="14dp"
+        app:icon="@drawable/ic_desfazer"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconTint="@color/texto_primario"
+        app:strokeColor="@color/contorno" />
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- FRAGMENT: lista de quadras com filtros -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/textSaudacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+            android:textColor="@color/texto_primario"
+            android:textStyle="bold"
+            tools:text="E aí, Carlão! 🏀" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/quadras_pergunta"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="@color/texto_secundario" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupFiltro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:checkedChip="@id/chipTodas"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTodas"
+                style="@style/Widget.Rachao.ChipFiltro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filtro_todas" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCobertas"
+                style="@style/Widget.Rachao.ChipFiltro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filtro_cobertas" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipArLivre"
+                style="@style/Widget.Rachao.ChipFiltro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filtro_ar_livre" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/textRolandoAgora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="@color/vermelho_fogo"
+            tools:text="3 rachas rolando agora" />
+    </LinearLayout>
+
+    <!-- FrameLayout: lista + mensagem de lista vazia sobrepostas -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerQuadras"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            tools:listitem="@layout/item_quadra" />
+
+        <TextView
+            android:id="@+id/textVazio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/lista_vazia"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="@color/texto_apagado"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

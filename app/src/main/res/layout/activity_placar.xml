@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TELA 4: Placar ao vivo -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationContentDescription="@string/cd_voltar"
+        app:navigationIcon="@drawable/ic_voltar"
+        app:title="@string/placar_titulo"
+        tools:subtitle="Quadra do Viaduto" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Placar estilo ginásio -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_placar"
+                android:padding="16dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guiaMeio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:id="@+id/textNomeLaranja"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center"
+                    android:text="@string/time_laranja"
+                    android:textAllCaps="true"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="@color/laranja_bola"
+                    app:layout_constraintEnd_toStartOf="@id/guiaMeio"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textNomeAzul"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center"
+                    android:text="@string/time_azul"
+                    android:textAllCaps="true"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="@color/azul_quadra"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guiaMeio"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textPontosLaranja"
+                    style="@style/TextAppearance.Rachao.Placar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/bg_digitos"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:shadowColor="@color/laranja_bola"
+                    android:textColor="@color/placar_digito_laranja"
+                    app:layout_constraintEnd_toStartOf="@id/guiaMeio"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textNomeLaranja"
+                    tools:text="00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/placar_digital"
+                    android:text="@string/placar_versus"
+                    android:textColor="@color/texto_apagado"
+                    android:textSize="28sp"
+                    app:layout_constraintBottom_toBottomOf="@id/textPontosLaranja"
+                    app:layout_constraintEnd_toEndOf="@id/guiaMeio"
+                    app:layout_constraintStart_toStartOf="@id/guiaMeio"
+                    app:layout_constraintTop_toTopOf="@id/textPontosLaranja" />
+
+                <TextView
+                    android:id="@+id/textPontosAzul"
+                    style="@style/TextAppearance.Rachao.Placar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_digitos"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:shadowColor="@color/azul_quadra"
+                    android:textColor="@color/placar_digito_azul"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guiaMeio"
+                    app:layout_constraintTop_toBottomOf="@id/textNomeAzul"
+                    tools:text="00" />
+
+                <TextView
+                    android:id="@+id/textMeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/placar_digital"
+                    android:letterSpacing="0.1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/texto_secundario"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textPontosLaranja"
+                    tools:text="Jogo até 21" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Banner de vitória (aparece ao atingir 21) -->
+            <LinearLayout
+                android:id="@+id/bannerVencedor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_vencedor"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textVencedor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textColor="@color/amarelo_trofeu"
+                    android:textStyle="bold"
+                    tools:text="🏆 Time Laranja venceu!" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/botaoNovaPartida"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:text="@string/botao_nova_partida"
+                        app:cornerRadius="14dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/botaoVoltarQuadra"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:text="@string/botao_voltar_quadra"
+                        android:textColor="@color/texto_primario"
+                        app:cornerRadius="14dp"
+                        app:strokeColor="@color/contorno" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Botões de pontos: view_botoes_pontos.xml é inflado em cada container -->
+            <TextView
+                android:id="@+id/textRotuloBotoesLaranja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/time_laranja"
+                android:textAppearance="@style/TextAppearance.Rachao.Secao"
+                android:textColor="@color/laranja_bola" />
+
+            <FrameLayout
+                android:id="@+id/containerBotoesLaranja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/textRotuloBotoesAzul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/time_azul"
+                android:textAppearance="@style/TextAppearance.Rachao.Secao"
+                android:textColor="@color/azul_quadra" />
+
+            <FrameLayout
+                android:id="@+id/containerBotoesAzul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <!-- Histórico -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/historico_titulo"
+                android:textAppearance="@style/TextAppearance.Rachao.Secao" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/textHistorico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/placar_digital"
+                    android:lineSpacingExtra="6dp"
+                    android:padding="16dp"
+                    android:textColor="@color/texto_secundario"
+                    android:textSize="14sp"
+                    tools:text="+3 Time Azul\n+2 Time Laranja" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Elencos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/elenco_titulo"
+                android:textAppearance="@style/TextAppearance.Rachao.Secao" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardElencoLaranja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:strokeColor="@color/laranja_bola">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/time_laranja"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textColor="@color/laranja_bola"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textNivelLaranja"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        android:textColor="@color/texto_secundario"
+                        tools:text="Nível médio 3.5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerLaranja"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:nestedScrollingEnabled="false"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_jogador" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardElencoAzul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:strokeColor="@color/azul_quadra">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/time_azul"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textColor="@color/azul_quadra"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textNivelAzul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        android:textColor="@color/texto_secundario"
+                        tools:text="Nível médio 3.4" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerAzul"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:nestedScrollingEnabled="false"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_jogador" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ilustração placeholder de quadra (gerada) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <path
+        android:fillColor="@color/ceu_noite"
+        android:pathData="M0,0 L320,0 L320,110 L0,110 Z" />
+    <!-- céu noturno com lua e estrelas -->
+    <path
+        android:fillColor="@color/luz_refletor"
+        android:pathData="M262,30 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0 Z" />
+    <path
+        android:fillColor="@color/branco"
+        android:fillAlpha="0.6"
+        android:pathData="M40,20 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0 Z M90,45 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0 Z M220,15 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0 Z M300,70 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0 Z M20,75 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0 Z" />
+    <!-- prédios ao fundo -->
+    <path
+        android:fillColor="@color/fundo_asfalto"
+        android:fillAlpha="0.7"
+        android:pathData="M0,110 L0,70 L30,70 L30,55 L60,55 L60,85 L85,85 L85,110 Z M235,110 L235,80 L260,80 L260,60 L290,60 L290,90 L320,90 L320,110 Z" />
+    <!-- piso -->
+    <path
+        android:fillColor="@color/piso_2"
+        android:pathData="M0,110 L320,110 L320,180 L0,180 Z" />
+    <!-- linhas: fundo, garrafão e lance livre em perspectiva -->
+    <path
+        android:pathData="M0,116 L320,116 M118,180 L134,116 M202,180 L186,116 M126,148 L194,148 M126,148 C130,170 190,170 194,148 M30,180 C40,130 280,130 290,180"
+        android:strokeWidth="2"
+        android:strokeAlpha="0.85"
+        android:strokeColor="@color/branco" />
+    <!-- poste -->
+    <path
+        android:fillColor="@color/poste"
+        android:pathData="M156,60 L164,60 L164,118 L156,118 Z" />
+    <!-- tabela -->
+    <path
+        android:fillColor="@color/branco"
+        android:pathData="M122,22 L198,22 L198,66 L122,66 Z" />
+    <path
+        android:pathData="M147,40 L173,40 L173,58 L147,58 Z"
+        android:strokeWidth="2"
+        android:strokeColor="@color/laranja_bola" />
+    <!-- aro e rede -->
+    <path
+        android:pathData="M147,66 a13,3.5 0 1,0 26,0 a13,3.5 0 1,0 -26,0"
+        android:strokeWidth="3"
+        android:strokeColor="@color/laranja_bola" />
+    <path
+        android:pathData="M148,68 L153,84 M172,68 L167,84 M154,69 L156,84 M166,69 L164,84 M160,70 L160,84 M150,74 L170,74 M152,79 L168,79"
+        android:strokeWidth="1.2"
+        android:strokeColor="@color/branco" />
+    <!-- bola -->
+    <path
+        android:fillColor="@color/laranja_bola"
+        android:pathData="M218,150 a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0 Z" />
+    <path
+        android:pathData="M232,136 L232,164 M218,150 L246,150 M222,140 C228,146 228,154 222,160 M242,140 C236,146 236,154 242,160"
+        android:strokeWidth="1.5"
+        android:strokeColor="@color/fundo_asfalto" />
+</vector>

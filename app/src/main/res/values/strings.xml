@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">Rachão</string>
+
+    <!-- Gerais -->
+    <string name="cd_voltar">Voltar</string>
+    <string name="cd_logo">Bola de basquete</string>
+    <string name="cd_foto_quadra">Ilustração da quadra</string>
+    <string name="erro_quadra_nao_encontrada">Quadra não encontrada</string>
+
+    <!-- Posições e tipos -->
+    <string name="posicao_armador">Armador</string>
+    <string name="posicao_ala">Ala</string>
+    <string name="posicao_pivo">Pivô</string>
+    <string name="tipo_coberta">Coberta</string>
+    <string name="tipo_ar_livre">Ao ar livre</string>
+
+    <!-- Tela 1: Perfil -->
+    <string name="perfil_slogan">Organize a pelada de basquete da rua</string>
+    <string name="perfil_cartao_titulo">Seu perfil de jogador</string>
+    <string name="perfil_nome_hint">Nome</string>
+    <string name="perfil_apelido_hint">Apelido (opcional)</string>
+    <string name="perfil_apelido_ajuda">É assim que a galera vai te chamar na quadra</string>
+    <string name="perfil_posicao">Posição</string>
+    <string name="perfil_nivel">Nível</string>
+    <string name="perfil_nivel_descricao">%1$d/5 · %2$s</string>
+    <string name="perfil_botao">Bora pra quadra</string>
+    <string name="erro_nome_vazio">Informe seu nome pra entrar no racha</string>
+    <string-array name="niveis_descricao">
+        <item>Iniciante</item>
+        <item>Se vira</item>
+        <item>Joga bonito</item>
+        <item>Brabo</item>
+        <item>Lenda da quadra</item>
+    </string-array>
+
+    <!-- Tela 2: Quadras -->
+    <string name="quadras_titulo">Quadras</string>
+    <string name="saudacao">E aí, %1$s! 🏀</string>
+    <string name="quadras_pergunta">Onde vai ser o racha hoje?</string>
+    <string name="filtro_todas">Todas</string>
+    <string name="filtro_cobertas">Cobertas</string>
+    <string name="filtro_ar_livre">Ao ar livre</string>
+    <string name="nenhum_racha_rolando">Nenhum racha rolando agora</string>
+    <plurals name="rachas_rolando">
+        <item quantity="one">%d racha rolando agora</item>
+        <item quantity="other">%d rachas rolando agora</item>
+    </plurals>
+    <string name="lista_vazia">Nenhuma quadra nesse filtro</string>
+    <string name="selo_rolando">🔥 Rolando agora</string>
+    <string name="jogadores_contagem">%1$d/%2$d jogadores</string>
+
+    <!-- Tela 3: Detalhe -->
+    <string name="detalhe_titulo">Detalhes da quadra</string>
+    <string name="iluminacao_formato">Iluminação: %1$s</string>
+    <string name="iluminacao_sim">Sim</string>
+    <string name="iluminacao_nao">Não</string>
+    <string name="iluminacao_nao_informado">Não informado</string>
+    <string name="regras_titulo">Regras da casa</string>
+    <string name="confirmados_titulo">Confirmados</string>
+    <plurals name="vagas_restantes">
+        <item quantity="one">%d vaga restante</item>
+        <item quantity="other">%d vagas restantes</item>
+    </plurals>
+    <string name="vagas_lotado">Lotado</string>
+    <plurals name="faltam_para_sortear">
+        <item quantity="one">Falta %d jogador para sortear os times</item>
+        <item quantity="other">Faltam %d jogadores para sortear os times</item>
+    </plurals>
+    <string name="botao_entrar">Entrar no racha</string>
+    <string name="botao_sair">Sair do racha</string>
+    <string name="botao_lotado">Racha lotado</string>
+    <string name="botao_sortear">Sortear times</string>
+    <string name="msg_entrou">Você tá no racha! 🏀</string>
+    <string name="msg_saiu">Você saiu do racha</string>
+
+    <!-- Item jogador -->
+    <string name="selo_voce">VOCÊ</string>
+    <string name="apelido_formato">“%1$s”</string>
+    <string name="jogador_detalhe">%1$s · Nível %2$d</string>
+
+    <!-- Tela 4: Placar -->
+    <string name="placar_titulo">Placar</string>
+    <string name="time_laranja">Time Laranja</string>
+    <string name="time_azul">Time Azul</string>
+    <string name="placar_versus">×</string>
+    <string name="placar_meta">Jogo até %1$d</string>
+    <string name="placar_nivel_medio">Nível médio %1$.1f</string>
+    <string name="vencedor">🏆 %1$s venceu!</string>
+    <string name="botao_nova_partida">Nova partida</string>
+    <string name="botao_voltar_quadra">Voltar para a quadra</string>
+    <string name="historico_titulo">Últimas cestas</string>
+    <string name="historico_vazio">Nenhuma cesta ainda. Bola ao alto!</string>
+    <string name="historico_item">+%1$d %2$s</string>
+    <string name="elenco_titulo">Elencos</string>
+    <string name="ponto_1">+1</string>
+    <string name="ponto_2">+2</string>
+    <string name="ponto_3">+3</string>
+    <string name="cd_desfazer">Desfazer última cesta do time</string>
+</resources>

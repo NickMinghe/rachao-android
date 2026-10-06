@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TELA 3: Detalhe da quadra -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationContentDescription="@string/cd_voltar"
+        app:navigationIcon="@drawable/ic_voltar"
+        app:title="@string/detalhe_titulo" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp">
+
+            <!-- Foto grande -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp">
+
+                    <ImageView
+                        android:id="@+id/imageFoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/cd_foto_quadra"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/ilustra_quadra_1" />
+
+                    <TextView
+                        android:id="@+id/textRolando"
+                        style="@style/Widget.Rachao.Selo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|start"
+                        android:layout_margin="12dp"
+                        android:background="@drawable/bg_selo_rolando"
+                        android:text="@string/selo_rolando" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/textNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="@color/texto_primario"
+                android:textStyle="bold"
+                tools:text="Quadra do Viaduto" />
+
+            <!-- Informações -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textBairro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:textColor="@color/texto_primario"
+                        app:drawableStartCompat="@drawable/ic_local"
+                        app:drawableTint="@color/laranja_bola"
+                        tools:text="Centro" />
+
+                    <TextView
+                        android:id="@+id/textHorario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:textColor="@color/texto_primario"
+                        app:drawableStartCompat="@drawable/ic_relogio"
+                        app:drawableTint="@color/laranja_bola"
+                        tools:text="Seg a Sex · 19h às 22h" />
+
+                    <TextView
+                        android:id="@+id/textTipo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:textColor="@color/texto_primario"
+                        app:drawableStartCompat="@drawable/ic_teto"
+                        app:drawableTint="@color/laranja_bola"
+                        tools:text="Ao ar livre" />
+
+                    <TextView
+                        android:id="@+id/textIluminacao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:textColor="@color/texto_primario"
+                        app:drawableStartCompat="@drawable/ic_lampada"
+                        app:drawableTint="@color/laranja_bola"
+                        tools:text="Iluminação: Sim" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Regras da casa: só aparece se regrasDaCasa != null -->
+            <LinearLayout
+                android:id="@+id/blocoRegras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_regras"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/regras_titulo"
+                    android:textAppearance="@style/TextAppearance.Rachao.Secao"
+                    app:drawableStartCompat="@drawable/ic_regras"
+                    app:drawableTint="@color/laranja_bola" />
+
+                <TextView
+                    android:id="@+id/textRegras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="@color/texto_primario"
+                    tools:text="Quem perde sai." />
+            </LinearLayout>
+
+            <!-- Confirmados -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/textConfirmadosTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/confirmados_titulo"
+                    android:textAppearance="@style/TextAppearance.Rachao.Secao"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textContagem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="@color/texto_secundario"
+                    app:layout_constraintBaseline_toBaselineOf="@id/textConfirmadosTitulo"
+                    app:layout_constraintStart_toEndOf="@id/textConfirmadosTitulo"
+                    tools:text="7/10 jogadores" />
+
+                <TextView
+                    android:id="@+id/textVagas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="@color/azul_quadra"
+                    app:layout_constraintBaseline_toBaselineOf="@id/textConfirmadosTitulo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="3 vagas restantes" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progressOcupacao"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:indicatorColor="@color/laranja_bola"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textConfirmadosTitulo"
+                    app:trackColor="@color/superficie_alta"
+                    app:trackCornerRadius="4dp"
+                    app:trackThickness="6dp"
+                    tools:progress="70" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerConfirmados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_jogador" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Barra de ações fixa no rodapé -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/superficie"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/textDicaSorteio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="@color/texto_secundario"
+            tools:text="Falta 1 jogador para sortear os times" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botaoEntrar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="18dp"
+            tools:text="@string/botao_entrar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botaoSortear"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/azul_quadra"
+            android:text="@string/botao_sortear"
+            android:textColor="@color/branco"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:cornerRadius="18dp"
+            app:icon="@drawable/ic_sortear"
+            app:iconGravity="textStart"
+            app:iconTint="@color/branco"
+            tools:visibility="visible" />
+    </LinearLayout>
+</LinearLayout>

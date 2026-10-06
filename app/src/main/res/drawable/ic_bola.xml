@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bola de basquete -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="@color/laranja_bola"
+        android:pathData="M24,2 a22,22 0 1,0 0.01,0 Z" />
+    <path
+        android:fillColor="@color/laranja_escuro"
+        android:pathData="M46,24 a22,22 0 0,1 -22,22 a22,22 0 0,0 18,-22 Z" />
+    <path
+        android:pathData="M24,2 L24,46 M2,24 L46,24 M8.5,8.5 C16,16 16,32 8.5,39.5 M39.5,8.5 C32,16 32,32 39.5,39.5"
+        android:strokeWidth="2.2"
+        android:strokeColor="@color/fundo_asfalto"
+        android:strokeLineCap="round" />
+</vector>

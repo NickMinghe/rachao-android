@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fundo do chip de filtro: laranja quando selecionado -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/laranja_bola" android:state_checked="true" />
+    <item android:color="@color/superficie_card" />
+</selector>
